@@ -1,0 +1,21 @@
+%% dp = [s, u, l]
+function cost = cost_function(dp)
+    valid_points = [];
+    delta_l = []
+    R = [];
+
+    s = [dp(1:3)', dp(4:6)', dp(7:9)', dp(10:12)', dp(13:15)', dp(16:18)'];
+    u = [dp(19:21)', dp(22:24)', dp(25:27)', dp(28:30)', dp(31:33)', dp(34:36)'];
+    lor = dp(37:42);
+
+    
+
+    for i = 1: length(valid_points)
+        for i = 1:6
+            l (: , i) = o + R * s(: , i) - u (: , i);
+            L(i) = norm (l (: , i), 2);
+            N(:, i) = l (: , i)/L(i);
+        end
+        cost(i) = L*L' - (lor - delta_l)^2;
+    end   
+end
